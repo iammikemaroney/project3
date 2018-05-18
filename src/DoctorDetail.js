@@ -9,8 +9,8 @@ const DoctorDetail = props => (
       style={{ margin: "0 auto" }}
     />
     <h3>Doctor Name: {props.practices.name}</h3>
-    <h3>Location: {props.visit_address}</h3>
-    <h3>Phone Number: {props.number}</h3>
+    <h3>Location: {props.practices.visit_address.street}</h3>
+    <h3>Phone Number: {props.practices.phones.number}</h3>
   </div>
 );
 
