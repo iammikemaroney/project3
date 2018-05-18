@@ -1,16 +1,23 @@
 {
-  "name": "project_3",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4"
-  },
+  "name": "project3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/iammikemaroney/project3.git",
+  "author": "Wayne Wright <wwiinavi@hotmail.com>",
+  "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "server": "nodemon server.js",
+    "client": "cd client/ && yarn start",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.1",
+    "request": "^2.86.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1"
   }
 }

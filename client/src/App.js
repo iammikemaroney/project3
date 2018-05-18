@@ -12,8 +12,9 @@ class App extends Component {
     return (
       <div className="App">
 
-      {recipes.map(recipe => (
+      {recipes.map((recipe, i) => (
         <Scrape
+          key={i}
           title= {recipe.title}
           image= {recipe.image}
           link= {recipe.link}

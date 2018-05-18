@@ -4,10 +4,10 @@ import "./Scrape.css";
 
 const Scrape = props => (
     
-    <div class="carousel">
+    <div className="carousel">
         <h3> {props.title} </h3>
        
-        <a class="carousel-item" href= {props.link}><img src= {props.image} alt=""/>{props.children}</a>
+        <a className="carousel-item" href= {props.link}><img src= {props.image} alt=""/>{props.children}</a>
 
     </div>
     // </div>
