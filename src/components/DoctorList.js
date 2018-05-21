@@ -3,14 +3,15 @@ import React from "react";
 const DoctorList = props => (
   <ul className="collection">
     {props.results.map(result => (
-      <li className="collection-item" key={result.id}>
+      <div key={result.id}>
         <img
-          alt={result.name}
+          alt={result.profile.first_name}
           className="img-fluid"
-          src={result.image}
+          src={result.profile.image_url}
         />
-        <h1> {result.data.name} </h1>
-      </li>
+        <h1> {result.profile.first_name} {result.profile.last_name}</h1>
+        
+      </div>
     ))}
   </ul>
 );
