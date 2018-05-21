@@ -6,7 +6,7 @@ const postSchema = new Schema({
   author: { type: String, required: true },
   image: String,
   video: String,
-  description: {type: String},
+  message: {type: String},
   date: { type: Date, default: Date.now }
 });
 

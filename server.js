@@ -16,7 +16,8 @@ app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("client/build"));
 
-app.connect(process.env.MONGODB_URI || "mongodb://localhost/recipelist")
+
+app.connect(process.env.MONGODB_URI || "mongodb://localhost/marijuanadb")
 // Add routes, both API and view
 // app.use(routes);
 var recipeUrl = "Scraper";
@@ -26,9 +27,9 @@ var recipeCol = ["scrapedData"];
 //     console.log("Database error: ", error);
 // });
 
-app.get("/", function(req, res){
-    res.send("Worked");
-});
+// app.get("/", function(req, res){
+//     res.send("Worked");
+// });
 
 app.get("/all", function(req, res){
     db.recipeCol.find({}, function(error, found){
@@ -63,7 +64,7 @@ app.get("/scrape", function(req, res){
     console.log(results)
     fs.writeFile('./src/components/Scrape/recipes.json', JSON.stringify(results), function(err){
         console.log("Scrape transfer was successful")
-    })
+    });
     // res.send()
 })
 })
