@@ -1,14 +1,7 @@
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
-
+/* navbar style */
 .brand-logo {
   font-family: 'Shrikhand', cursive;
-  font-size: 32px;
+  font-size: 24px;
   text-shadow: 2px 2px #00acc1;
   color: #b2ebf2;
   letter-spacing: 1px;
@@ -18,6 +11,19 @@
   background-color: #00bcd4;
 }
 
+.sidenav-trigger {
+  color: #FFF;
+}
+
+#nav-mobile {
+  color: #00bcd4;
+}
+
+#nav-links {
+  color: #00bcd4;
+}
+
+/* text style */
 h4 {
   color: #FFF;
   font-weight: bold;
@@ -44,18 +50,12 @@ a {
   color: #FFF;
 }
 
-.sidenav-trigger {
-  color: #FFF;
+a:hover {
+  font-weight: bold;
+  color: #b2ebf2;
 }
 
-#nav-mobile {
-  color: #00bcd4;
-}
-
-#nav-links {
-  color: #00bcd4;
-}
-
+/* signup button */
 #signup-button {
   position: absolute;
   width: 200px;
@@ -65,12 +65,47 @@ a {
   z-index: 9;
 }
 
+/* carousel */
 .carousel
 .carousel-item {
-  margin-top: -50px !important;
+  margin-top: -90px !important;
   width: 300px !important;
 }
 
+/* recipe box */
+div.recipe {
+  background-color: #FFF;
+  width: 100%;
+  height: 400px;
+  overflow: scroll;
+}
+
+/* restaurant box */
+div.restaurant {
+  background-color: #FFF;
+  width: 100%;
+  height: 400px;
+  overflow: scroll;
+}
+
+/* scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00bcd4; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b2ebf2; 
+}
+
+/* parallax */
 .parallax-container {
   min-height: 380px;
   line-height: 0;
@@ -81,10 +116,11 @@ a {
     width: 100%;
   }
 
+/* mobile */
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
-    position: absolute;
-    top: 40%;
+    position: relative;
+    top: 0;
   }
   #index-banner .section {
     top: 5%;
@@ -100,6 +136,7 @@ a {
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
   font-size: inherit;
 }
