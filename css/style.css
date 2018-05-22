@@ -6,29 +6,69 @@
  * Made By MaterializeCSS.com
  */
 
-nav ul a,
-nav .brand-logo {
-  color: #1b5e20;
+.brand-logo {
+  font-family: 'Shrikhand', cursive;
+  font-size: 32px;
+  text-shadow: 2px 2px #00acc1;
+  color: #b2ebf2;
+  letter-spacing: 1px;
+}
+
+.nav-bar {
+  background-color: #00bcd4;
 }
 
 h4 {
-  color: #b2ebf2;
+  color: #FFF;
+  font-weight: bold;
+}
+
+h5 {
+  color: #00acc1;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h6 {
+  color: #FFF;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 p {
   line-height: 2rem;
 }
 
+a {
+  font-weight: bold;
+  color: #FFF;
+}
+
 .sidenav-trigger {
-  color: #1b5e20;
+  color: #FFF;
 }
 
 #nav-mobile {
-  color: #1b5e20;
+  color: #00bcd4;
 }
 
-#nav {
-  color: #1b5e20;
+#nav-links {
+  color: #00bcd4;
+}
+
+#signup-button {
+  position: absolute;
+  width: 200px;
+  top: 290px;
+  left: 42%;
+  justify-content: center;
+  z-index: 9;
+}
+
+.carousel
+.carousel-item {
+  margin-top: -50px !important;
+  width: 300px !important;
 }
 
 .parallax-container {
@@ -47,7 +87,7 @@ p {
     top: 40%;
   }
   #index-banner .section {
-    top: 10%;
+    top: 5%;
   }
 }
 
