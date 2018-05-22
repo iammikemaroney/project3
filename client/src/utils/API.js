@@ -8,12 +8,12 @@ const APIKEY = "144db4638bf7ea5ea76c0d3a06ac7ef1";
 export default {
 
   // Post API
-  newPost: function(){
-    return axios.post("/post")
-  },
-  getPost: function() {
-    return axios.get("/post")
-  },
+  // newPost: function(){
+  //   return axios.post("/post");
+  // },
+  // getPost: function() {
+  //   return axios.get("/post");
+  // },
   // Doctors API
   search: function(query) {
     return axios.get(BASEURL + APIKEY);

@@ -12,8 +12,8 @@ const styles = {
   },
   center: {
     textAlign: "center"
-  }
-}
+  },
+};
 
 class SignupForm extends Component {
   state = {
@@ -27,7 +27,7 @@ class SignupForm extends Component {
 
   handleInputChange = event => {
     const {name, value} = event.target;
-    this.setState({[name]: value})
+    this.setState({[name]: value});
   };
 
   handleSignUp = event => {

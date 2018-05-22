@@ -18,6 +18,7 @@ class Home extends Component {
           <Login/>
           
           <SignUp/>
+
           <NewPost/>
           <PostCard/>
           <DoctorContainer/>
