@@ -1,5 +1,5 @@
 import React from "react";
-
+import cloud from "./c9-square.png";
 
 const PostCard = props => (
 
@@ -7,7 +7,7 @@ const PostCard = props => (
     <div className="card-image waves-effect waves-block waves-light">
       <div className="medias">
       </div>
-      <img className="activator" src="c9-square.png" alt= {props.key}/>
+      <img className="activator" src={ cloud } alt= {props.key}/>
     </div>
     <div className="card-content">
       <span className="card-title activator grey-text text-darken-4">Card Title<i className="material-icons right">more_vert</i></span>

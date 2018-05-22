@@ -106,9 +106,14 @@ const albumSeed = [
     
 ];
 
+const randomAlbum = () => {
+  return Math.floor(Math.random() * Math.floor(albumSeed.length));
+}; 
+
+
 db.Album
   .remove({})
-  .then(() => db.album.collection.insertMany(albumSeed))
+  .then(() => db.album.insertOne(randomAlbum))
   .then(data => {
     console.log(data.insertedIds.length + " records inserted!");
     process.exit(0);

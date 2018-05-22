@@ -12,21 +12,21 @@ const movieSeed = [
   {
     title: "Kung FU Hustle",
     year: "2004",
-    synopsis: "After the super success of Shaolin Soccer, Stephen Chow's second consecutive experiment with the martial art is fun as hell! The film follows a wannabe-gangster as he joins the mob gang in town and residents of a housing complex defend their turf with their own extra-ordinary powers. Funny, innovative visuals and some very inventive action set pieces in the climax will ensure you have a blast!", 
+    synopsis: "The film follows a wannabe-gangster as he joins the mob gang in town and residents of a housing complex defend their turf with their own extra-ordinary powers. Funny, innovative visuals and some very inventive action set pieces in the climax will ensure you have a blast!", 
     image: "https://www.bing.com/th?id=OIP.lMcv1RVsO1tyEo28bNzQwwHaE0&w=186&h=121&c=7&o=5&dpr=2&pid=1.7"
     
   },
   {
     title: "Fight Club",
     year: "2000",
-    synopsis: "This masterpiece  by David Fincher is not the most convenient films to watch the first time. Also, it certainly doesn't help if you watch it at the age of 9, like the author. However, once you're over the initial hesitance - be prepared to be bowled over the magical duo of Edward Norton and Brad Pitt. Rule no. 1 - watch it high, and you'll like the striking visuals even more than usual.", 
+    synopsis: "This masterpiece  by David Fincher is not the most convenient films to watch the first time. Be prepared to be bowled over the magical duo of Edward Norton and Brad Pitt. Rule no. 1 - watch it high, and you'll like the striking visuals even more than usual.", 
     image: "https://www.bing.com/th?id=OIP.FmbqXP45qlGYDcCbHTjdJAHaEv&w=234&h=160&c=7&o=5&dpr=2&pid=1.7"
     
   },
   {
     title: "Interstellar",
     year: "2014",
-    synopsis: "Christopher Nolan again. The stoner's favourite filmmaker, you ask? Maybe. Everything was hunky dory in Interstellar till the last half an hour when they start zooming through Quantum Physics and concepts like singularity, gravitational constant and slow passage of time - left everyone in a dizzy. Watching it high might actually help you focus on the essentials, and you might actually make sense of it.", 
+    synopsis: "The stoner's favourite filmmaker. Everything was hunky dory in Interstellar till the last half an hour when they start zooming through Quantum Physics and concepts like singularity, gravitational constant and slow passage of time - left everyone in a dizzy. Watching it high might actually help you focus on the essentials, and you might actually make sense of it.", 
     image: "https://www.bing.com/th?id=OIP.Ww5w73XmqwEGJI4TDobnogHaEK&w=210&h=160&c=7&o=5&dpr=2&pid=1.7"
     
   },
@@ -54,7 +54,7 @@ const movieSeed = [
   {
     title: "Enter the Void",
     year: "2009",
-    synopsis: "Directed by Gasper Noe, this film made the whole psychedelic trip more accessible to India. It follows a drug dealer as his spirit floats over Tokyo and he re-examines life. Didn't understand? The director was on mushrooms when he wrote the film, and that might have something to do with how it turned out...", 
+    synopsis: "Directed by Gasper Noe, this film made the whole psychedelic trip more accessible to India. It follows a drug dealer as his spirit floats over Tokyo and he re-examines life. The director was on mushrooms when he wrote the film.", 
     image: "https://www.bing.com/th?id=OIP.DIrY33kXblY6yxJRB--gaQHaEK&w=233&h=160&c=7&o=5&dpr=2&pid=1.7"
     
   },
@@ -68,7 +68,7 @@ const movieSeed = [
   {
     title: "Batman & Robin",
     year: "1997",
-    synopsis: "As admitted by the actor George Clooney himself, this movie was one of the biggest mistakes following up on the legacy of Tim Burton's spectacular couple of films. This film shut DC down for 7 years, after which they decided to reboot it afresh with Chris Nolan in 2004. This debacle made by Joel Schumacher actually has some entertaining spangled outfits, Clooney's teeth, Arnold's frozen expression as he plays Mr. Freeze, a lot of fun for a night out drinking with friends.", 
+    synopsis: "This film shut DC down for 7 years, after which they decided to reboot it afresh with Chris Nolan in 2004. This debacle made by Joel Schumacher actually has some entertaining spangled outfits, Clooney's teeth, Arnold's frozen expression as he plays Mr. Freeze, a lot of fun for a night out drinking with friends.", 
     image: "https://velvetcurtainreviews.files.wordpress.com/2012/07/batman-and-robin-1997-movie-cover1.jpg"
     
   },
@@ -111,9 +111,13 @@ const movieSeed = [
 
 ];
 
+const randomMovie = () => {
+  return Math.floor(Math.random() * Math.floor(movieSeed.length));
+}; 
+
 db.Movie
   .remove({})
-  .then(() => db.Movie.collection.insertMany(movieSeed))
+  .then(() => db.Movie.collection.insertOne(randomMovie))
   .then(data => {
     console.log(data.insertedIds.length + " records inserted!");
     process.exit(0);
