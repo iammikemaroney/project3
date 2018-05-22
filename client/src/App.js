@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
-import './App.css';
-import recipes from "../src/components/Scrape/recipes.json";
+import React, { Component } from "react";
+import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Signup, Login, NoMatch, Scrape } from "./components";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import NoMatch from "./components/NoMatch";
+import Food from "./components/Pages/Food";
+import Home from "./components/Pages/Home";
 import API from "./utils/API";
 
 class App extends Component {
@@ -18,7 +21,7 @@ class App extends Component {
     this.setState({
       user,
       loggedIn: true
-    })
+    });
   }
 
   handleLogout = () => {
@@ -34,54 +37,31 @@ class App extends Component {
 
   componentDidMount() {
     API.getCurrentUser()
-    .then(res => {
-      this.setState({
-        user: res.data.user,
-        loggedIn: res.data.user || false
-      })
-    })
+      .then(res => {
+        this.setState({
+          user: res.data.user,
+          loggedIn: res.data.user || false
+        });
+      });
   }
 
   render() {
     return (
       <Router>
         <div>
-          <Navbar loggedIn={this.state.loggedIn} logout={this.handleLogout}/>
+      
           <Switch>
-            <Route exact path="/" render={() => <Home loggedIn={this.state.loggedIn} user={this.state.user}/>} />
-            <Route exact path="/signup" component={SignupForm} />
+            <Route exact path="/" render={() => <Home loggedIn={this.state.loggedIn} user={this.state.user} />} />
+            <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" render={() => <Login setUser={this.setUser} />} />
             <Route component={NoMatch}/>
+            <Route exact path="/food" component={Food} />
           </Switch>
         </div>
       </Router>
+
     );
   }
 }
 
 export default App;
-
-
-
-//   render() {
-//     return (
-
-//       <div className="App">
-
-//       {recipes.map((recipe, i) => (
-//         <Scrape
-//           key={i}
-//           title= {recipe.title}
-//           image= {recipe.image}
-//           link= {recipe.link}
-//           children= "View Recipe"
-          
-//         />
-//         )
-//   )};
-//         </div>
-//   )
-//   }
-// }
-
-// export default App;

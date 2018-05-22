@@ -1,9 +1,7 @@
 import React from "react";
 
-const NewPost = () => {
-    <a onClick= {createPost} class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-}
+const NewPost = () => (
+  <a className="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">add</i></a>
+);
 
-createPost => {
-     
-}
+export default NewPost;

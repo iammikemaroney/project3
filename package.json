@@ -11,10 +11,13 @@
     "dev": "concurrently \"yarn server\" \"yarn client\""
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.2",
+    "eslint": "^4.19.1",
     "express": "^4.16.3",
     "mongoose": "^5.1.1",
+    "react-router-dom": "^4.2.2",
     "request": "^2.86.0"
   },
   "devDependencies": {

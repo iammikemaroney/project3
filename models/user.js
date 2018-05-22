@@ -42,11 +42,11 @@ UserSchema.methods.hashPassword = function(){
   if(!this.password) return;
   const hash = bcrypt.hashSync(this.password, 10);
   this.password = hash;
-}
+};
 
 UserSchema.methods.validPassword = function(password){
   return bcrypt.compareSync(password, this.password);
-}
+};
 
 // This creates our model from the above schema, using mongoose's model method
 var User = mongoose.model("User", UserSchema);

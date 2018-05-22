@@ -1,5 +1,5 @@
 import React from "react";
-import lostDog from "./images/lostDog.jpg"
+import lostDog from "./images/lostDog.jpg";
 const styles = {
   center: {
     textAlign: "center"
