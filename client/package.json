@@ -7,7 +7,20 @@
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": {
+    "/auth/google": {
+      "target": "http://localhost:3001"
+    },
+    "/post/*": {
+      "target": "http://localhost:3001"
+    },
+    "/recipes/*": {
+      "target": "http://localhost:3001"
+    },
+    "/scrape": {
+      "target": "http://localhost:3001"
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
