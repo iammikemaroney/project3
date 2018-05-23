@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DoctorList from "./DoctorList";
 import API from "../../utils/API";
+import "../../css/style.css";
 
 class DoctorListContainer extends Component {
     state = {

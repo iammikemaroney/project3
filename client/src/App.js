@@ -7,6 +7,7 @@ import NoMatch from "./components/NoMatch";
 import Food from "./components/Pages/Food";
 import Home from "./components/Pages/Home";
 import API from "./utils/API";
+import Navbar2 from "./components/Navbar2";
 
 class App extends Component {
   state = {
@@ -49,7 +50,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-      
+          <Navbar2/>
           <Switch>
             <Route exact path="/" render={() => <Home loggedIn={this.state.loggedIn} user={this.state.user} />} />
             <Route exact path="/signup" component={Signup} />
