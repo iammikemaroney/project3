@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const postRoutes = require("./post");
-const recipeRoutes = require("./recipes")
+const recipeRoutes = require("./recipes");
 
 // Book routes
 router.use("/post", postRoutes);
