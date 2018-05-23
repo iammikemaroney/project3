@@ -1,6 +1,5 @@
 const cheerio = require("cheerio");
 const request = require("request");
-var mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const express = require("express");
@@ -18,30 +17,7 @@ app.use(express.static("client/build"));
 
 
 app.connect(process.env.MONGODB_URI || "mongodb://localhost/marijuanadb");
-// Add routes, both API and view
-// app.use(routes);
-// var recipeUrl = "Scraper";
-// var recipeCol = ["scrapedData"];
-// var db = mongojs(recipeUrl, recipeCol);
-// db.on("error", function(error){
-//     console.log("Database error: ", error);
-// });
 
-// app.get("/", function(req, res){
-//     res.send("Worked");
-// });
-
-// app.get("/all", function(req, res){
-//   db.recipeCol.find({}, function(error, found){
-//     if (error){
-//       console.log(error);
-//     }
-//     else{
-//       res.json(found);
-//     }
-//   });
-
-// });
 
 app.get("/scrape", function(req, res){
   request("https://www.buzzfeed.com/angelameiquan/20-marijuana-recipes-that-coloradoans-and-washingt-70fn", function(error, response, html){
@@ -67,7 +43,7 @@ app.get("/scrape", function(req, res){
 
       console.log("Scrape transfer was successful");
     });
-    // res.send()
+    res.status(200).json("scaping done");
   });
 });
 
