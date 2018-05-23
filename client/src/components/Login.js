@@ -95,7 +95,7 @@ class Login extends Component{
               <hr />
               <h3 style={styles.header}>
                 Sign In With Google: 
-                <Link to="/auth/google" target="_self"><img src={googleImage} alt="Sign in with Google" /></Link>
+                <a href="/auth/google" target="_self"><img src={googleImage} alt="Sign in with Google" /></a>
               </h3>
             </Col>
           </Row>
