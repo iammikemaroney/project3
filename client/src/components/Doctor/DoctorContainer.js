@@ -34,6 +34,8 @@ class DoctorListContainer extends Component {
     render() {
       return (
         <div>
+          <br />
+          <h4 className="center cyan-text">Doctors in your Area</h4>
 
           <DoctorList 
             results={this.state.results}

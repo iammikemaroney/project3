@@ -29,6 +29,6 @@ const Navbar = ({loggedIn, logout}) => {
       </div>
     </nav>
   );
-};
+}
 
 export default Navbar;

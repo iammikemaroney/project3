@@ -1,7 +1,7 @@
-import React, {Component} from "react";
-import { Redirect, Link } from "react-router-dom";
-import API from "../utils/API";
+import React, {Component} from "react"
+import { Redirect, Link } from "react-router-dom"
 import { Wrapper, Row, Col } from "./BootstrapGrid";
+import API from "../utils/API";
 import googleImage from "./googleButtons/btn_google_signin_dark_normal_web.png";
 
 const styles = {
@@ -14,7 +14,7 @@ const styles = {
   center: {
     textAlign: "center"
   }
-};
+}
 
 class Login extends Component{ 
   state = {
@@ -27,18 +27,18 @@ class Login extends Component{
 
   handleInputChange = event => {
     const {name, value} = event.target;
-    this.setState({[name]: value});
+    this.setState({[name]: value})
   };
 
   handleLogin = event => {
     event.preventDefault();
     API.login({ email: this.state.email, password: this.state.password})
       .then((res) => {
-        console.log("RES", res);
-        this.props.setUser(res.data.user);
-        this.setState({
-          redirectTo: "/"
-        });
+          console.log("RES", res);
+          this.props.setUser(res.data.user)
+          this.setState({
+            redirectTo: "/"
+          });
       })
       .catch(err => console.log("Error executing handleLogin: ", err));
   }
@@ -47,7 +47,7 @@ class Login extends Component{
     event.preventDefault();
     API.googleSignup()
       .then(res => {
-        console.log(res);
+
       })
       .catch(err => console.log("Error executing googleSignUp: " , err));
   }
@@ -58,7 +58,7 @@ class Login extends Component{
 
   render(){
     if(this.state.redirectTo){
-      return <Redirect to={this.state.redirectTo} />;
+      return <Redirect to={this.state.redirectTo} />
     }
     return (
       <Wrapper>
@@ -95,7 +95,7 @@ class Login extends Component{
               <hr />
               <h3 style={styles.header}>
                 Sign In With Google: 
-                <a href="/auth/google" target="_self"><img src={googleImage} alt="Sign in with Google" /></a>
+                <Link to="/auth/google" target="_self"><img src={googleImage} alt="Sign in with Google" /></Link>
               </h3>
             </Col>
           </Row>

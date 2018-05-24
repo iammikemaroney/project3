@@ -12,10 +12,10 @@ const styles = {
   },
   center: {
     textAlign: "center"
-  },
-};
+  }
+}
 
-class SignupForm extends Component {
+class Signup extends Component {
   state = {
     redirectTo:"",
     email: "",
@@ -27,7 +27,7 @@ class SignupForm extends Component {
 
   handleInputChange = event => {
     const {name, value} = event.target;
-    this.setState({[name]: value});
+    this.setState({[name]: value})
   };
 
   handleSignUp = event => {
@@ -91,4 +91,4 @@ class SignupForm extends Component {
   }
 }
 
-export default SignupForm;
+export default Signup;
