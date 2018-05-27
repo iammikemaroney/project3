@@ -39,7 +39,7 @@ class DoctorListContainer extends Component {
 
           <DoctorList 
             results={this.state.results}
-            key= {this.id} 
+           
           />
         </div>
       );

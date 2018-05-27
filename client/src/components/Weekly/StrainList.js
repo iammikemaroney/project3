@@ -12,7 +12,7 @@ const StrainList = props => (
   
   <ul className="strainSection center white-text">
     {props.results.map(result => (
-      <div key={result.id}>
+      <div key={result.name}>
         <p className="list"> Strain: {result.name} </p>
         <img
           style={styles.weed}
@@ -22,7 +22,7 @@ const StrainList = props => (
         />
         <p className="list"> Lineage: {result.genetics.names} </p>
         <p className="list"> Company: {result.seedCompany.name} </p>
-        <p> <a className="strainLink" href={result.url}><strong>Strain Info</strong></a> </p>
+        <p> <strong><a className="strainLink" href={result.url}>Strain Info</a></strong> </p>
       </div>
     ))}
   </ul>

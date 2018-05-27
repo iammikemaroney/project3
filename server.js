@@ -10,6 +10,7 @@ const logger = require("morgan")("tiny");
 const cheerio = require("cheerio");
 const request = require("request");
 const routes = require("./controllers");
+const fs = require('fs');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -32,8 +33,8 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-
 app.use(logger);
+
 app.get("/scrape", function(req, res){
   request("https://www.buzzfeed.com/angelameiquan/20-marijuana-recipes-that-coloradoans-and-washingt-70fn", function(error, response, html){
     var $ = cheerio.load(html);
@@ -50,10 +51,49 @@ app.get("/scrape", function(req, res){
           link: link }
       )
       ;
-      console.log(res);
+      console.log(results);
     });
 
-    fs.writeFile("./client/src/components/Scrape", JSON.stringify(results), function(err){
+    fs.writeFile("scraped-stuff.json", JSON.stringify(results), function(err){
+      if (err) return console.log(err);
+
+      console.log("Scrape transfer was successful");
+    });
+    res.status(200).json("scaping done");
+  });
+});
+
+app.get("/events", function(req, res){
+  if(!"data-original"){
+    return "src"
+  }
+  request("https://www.everfest.com/unique/cannabis-festivals", function(error, response, html){
+    var $ = cheerio.load(html);
+    var results = [];
+
+    $("span.js-festival-fav-unfav-container").each(function(i, element){
+      var title = $(element).siblings("a").children("div.festival-card__footer").find("span.festival-card__title").text();
+      var date = $(element).siblings("a").children("div.festival-card__footer").find("span.festival-card__date").text();
+      var place = $(element).siblings("a").children("div.festival-card__footer").find("span.festival-card__location").text();
+      var image = $(element).siblings("a").children("img").attr("data-original");
+      var link = $(element).siblings("a").attr("href");
+      var alt = $(element).siblings("a").children("img").attr("alt");
+
+      
+      results.push(
+        { title: title,
+          image: image,
+          link: link,
+          date: date,
+          place: place,
+          alt: alt
+        }
+      )
+      ;
+      console.log(results);
+    });
+
+    fs.writeFile("events.json", JSON.stringify(results), function(err){
       if (err) console.log(err);
 
       console.log("Scrape transfer was successful");

@@ -7,6 +7,12 @@
     "/auth": {
       "target":"http://localhost:3001/",
       "ws": true
+    },
+    "/scrape": {
+      "target": "http://localhost:3001/"
+    },
+    "/events": {
+      "target": "http://localhost:3001/"
     }
   },
   "dependencies": {

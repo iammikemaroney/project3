@@ -13,10 +13,10 @@ router.get('/google/callback',
     })
 );
 
-router.post("/signup", (req, res) => {
+router.post("/", (req, res) => {
   db.User.create(req.body)
     .then((results) =>{
-      res.json("/login");
+      res.json("/");
     })
 });
 

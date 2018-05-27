@@ -24,6 +24,12 @@
 }
 
 /* text style */
+h3 {
+  color: #00838f;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 h4 {
   color: #FFF;
   font-weight: bold;
@@ -31,7 +37,7 @@ h4 {
 
 h5 {
   color: #00acc1;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -116,6 +122,26 @@ div.restaurant {
     width: 100%;
   }
 
+  /* recipe box */
+div.recipe {
+  background-color: #b2ebf2;
+  width: 100%;
+  height: 780px;
+  overflow: scroll;
+}
+
+/* restaurant box */
+div.restaurant {
+  background-color: #FFF;
+  width: 100%;
+  height: 400px;
+  overflow: scroll;
+}
+
+div.recipeBox {
+  background-color: #e0f7fa
+}
+
 /* mobile */
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
@@ -144,3 +170,4 @@ div.restaurant {
 footer.page-footer {
   margin: 0;
 }
+

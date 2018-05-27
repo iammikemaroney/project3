@@ -3,6 +3,14 @@ import Scrape from "../Scrape/Scrape";
 import recipes from "../Scrape/recipes.json";
 import "../../css/style.css";
 
+const styles = {
+  recipeCon: {
+    height: "960px"
+  },
+  recipeMod: {
+    height: "90%"
+  }
+}
 class Food extends Component {
     state = {
       
@@ -10,13 +18,14 @@ class Food extends Component {
 
     render () {
       return(
-        <div> 
-          <div class="container">
+        <div style={styles.recipeCon} className="recipeBox"> 
+          <div  className="container center">
             <br />
-            <div class="row">
-              <div class="col s12 m6">
-                <div class="recipe">
-                  <p>Recipes & Cooking Tips</p>
+            <div className="row">
+              <div className="col s12 m6">
+              <h2><i>Recipes & Cooking Tips</i></h2>
+                <div className="recipe">
+                  
                   {recipes.map((recipe, i) => (
                     <Scrape
                       key={i}
